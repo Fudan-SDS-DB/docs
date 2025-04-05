@@ -10,7 +10,7 @@ export const zh = defineConfig({
     sidebar: sidebarGuide(),
 
     editLink: {
-      pattern: 'https://github.com/SDSDB-2025/Final-Project-Guide/tree/main',
+      pattern: 'https://github.com/Fudan-SDS-DB/docs',
       text: '在 GitHub 上编辑此页面'
     },
 

@@ -28,7 +28,7 @@ export const shared = defineConfig({
     plugins: [
       GitChangelog({
         maxGitLogCount: 2000,
-        repoURL: () => 'https://github.com/SDSDB-2025/Final-Project-Guide',
+        repoURL: () => 'https://github.com/Fudan-SDS-DB/docs',
       }),
       GitChangelogMarkdownSection({
         exclude: (id) => id.endsWith('index.md'),
@@ -102,6 +102,6 @@ export const shared = defineConfig({
     search: {
       provider: 'local'
     },
-    socialLinks: [{ icon: 'github', link: 'https://github.com/SDSDB-2025/Final-Project-Guide' }]
+    socialLinks: [{ icon: 'github', link: 'https://github.com/Fudan-SDS-DB/docs' }]
   }
 })
