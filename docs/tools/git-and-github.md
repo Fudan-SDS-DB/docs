@@ -28,7 +28,7 @@ GitHub 则是一个基于 Git 的在线代码托管平台，提供远程仓库�
 - **如果你对命令行不熟悉，推荐使用 [GitHub Desktop](https://desktop.github.com/download/)**  
 这是 GitHub 官方提供的可视化工具，支持拖动文件、点击按钮完成提交、合并等操作。  
   > （悄悄说一句：助教大二做数据库项目的时候也是靠这个活下来的🤣）
-- **当你合并分支时，可能会遇到冲突**。VSCode 会显示类似以下格式：![](../static/img/git-and-github/conflict.png)
+- **当你合并分支时，可能会遇到冲突**。VSCode 会显示类似以下格式：![](../public/assets/git-and-github/conflict.png)
   - 请根据实际需要，选择其中一种处理方式：
     - Accept Current（保留当前分支内容）
     - Accept Incoming（保留另一个分支内容）

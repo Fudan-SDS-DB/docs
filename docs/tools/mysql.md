@@ -5,7 +5,7 @@
 
 ## 安装 MySQL
 
-- ~~助教本来想亲自写教程，但网上已经有详尽的现成资料，所以……选择开摆 😊~~
+- ~~助教本来想亲自写安装教程，但网上已经有详尽的现成资料，所以……选择开摆 😊~~
 - Windows 用户推荐参考：[超级详细的 MySQL 数据库安装指南](https://zhuanlan.zhihu.com/p/37152572)
 - macOS 用户推荐参考：[Mac 下 MySQL 的安装步骤](https://zhuanlan.zhihu.com/p/37942063)
 

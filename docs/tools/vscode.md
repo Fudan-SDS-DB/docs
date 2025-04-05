@@ -52,10 +52,10 @@
 #### MySQL
   - 安装插件后，在左侧导航栏点击 **Database**，选择 **Create Connection** 创建连接  
   - 在弹出的连接配置窗口中填写数据库连接信息，特别是密码字段，然后点击 **Connect**  
-    ![](../static/img/mysql/mysql.png)
+    ![](../public/assets/vscode/mysql.png)
   - 连接成功后，重新点击左侧导航栏的 **Database**，将看到如下界面：  
     <div align="center">
-      <img src="../static/img/mysql/sidebar.png" alt="sidebar" style="width: 60%;" />
+      <img src="../public/assets/vscode/sidebar.png" alt="sidebar" style="width: 60%;" />
     </div>
   - 在此界面中，你可以创建数据表、编写 SQL 语句（插件提供代码高亮与自动补全）、或使用终端交互模式。创建完数据表后，还可以查看表结构、字段类型、是否非空等元信息，鼓励大家多多尝试和探索。
   - 在期末项目开发中，也可以直接通过该插件可视化数据库中各表的数据，极大方便调试与排错。
