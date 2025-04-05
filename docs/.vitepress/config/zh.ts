@@ -42,11 +42,11 @@ export const zh = defineConfig({
 
 function nav(): DefaultTheme.NavItem[] {
   return [
-    {
-      text: '关于我们',
-      link: '/team',
-      activeMatch: '/team'
-    }
+    // {
+    //   text: '关于我们',
+    //   link: '/team',
+    //   activeMatch: '/team'
+    // }
   ]
 }
 
