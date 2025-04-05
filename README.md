@@ -1,6 +1,5 @@
 ## 数据库及实现
 
-
 ### 本地预览
 
 首先确保 node.js 版本满足 >= `v20.5.0` 或 >= `v18.18.0`, **安装好** VitePress 后, **重启终端**：
@@ -20,3 +19,6 @@ npm install
 ```bash
 npm run docs:dev
 ```
+
+### 鸣谢
+本指南参考 [FDUCSLG/COMP101](https://github.com/FDUCSLG/COMP101) 构建

@@ -27,7 +27,7 @@ export const shared = defineConfig({
     plugins: [
       GitChangelog({
         maxGitLogCount: 2000,
-        repoURL: () => 'https://github.com',
+        repoURL: () => 'https://github.com/SDSDB-2025/Final-Project-Guide',
       }),
       GitChangelogMarkdownSection({
         exclude: (id) => id.endsWith('index.md'),
@@ -72,7 +72,7 @@ export const shared = defineConfig({
   },
 
   sitemap: {
-    hostname: 'https://comp101.fducslg.com/',
+    hostname: 'https://sdsdb-2025.github.io/Final-Project-Guide/',
     transformItems(items) {
       return items.filter((item) => !item.url.includes('migration'))
     }
@@ -101,6 +101,6 @@ export const shared = defineConfig({
     search: {
       provider: 'local'
     },
-    socialLinks: [{ icon: 'github', link: 'https://github.com/FDUCSLG/COMP101' }]
+    socialLinks: [{ icon: 'github', link: 'https://github.com/SDSDB-2025/Final-Project-Guide' }]
   }
 })
