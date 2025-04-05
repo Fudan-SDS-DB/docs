@@ -17,7 +17,12 @@
   - Markdown All in One  
   - Markdown Preview Enhanced  
   :::tip
-  在标准项目中，我们通常会提供一个 `README.md` 文件（相信大家在 GitHub 上的项目仓库中也见过）。这个文件是你向他人介绍项目内容的重要窗口，它应当包括项目结构、依赖环境、运行方法等关键信息。建议同学们学习 Markdown 的基本语法（如标题、加粗、列表、代码块等）
+  在标准项目中，我们通常会提供一个 `README.md` 文件（相信大家在 GitHub 上的项目仓库中也见过）。这个文件是你向他人介绍项目内容的重要窗口，它应当包括项目结构、依赖环境、运行方法等关键信息
+  :::
+  :::details
+  建议同学们学习 Markdown 的基本语法（如标题、加粗、列表、代码块等）
+  - [Markdown 入门](https://comp101.fducslg.com/tools/markdown1)
+  - [Markdown 进阶](https://comp101.fducslg.com/tools/markdown2)
   :::
 #### 路径提示与自动补全
   - Path Intellisense    

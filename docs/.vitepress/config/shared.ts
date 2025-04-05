@@ -73,7 +73,7 @@ export const shared = defineConfig({
   },
 
   sitemap: {
-    hostname: 'https://sdsdb-2025.github.io/Final-Project-Guide/',
+    hostname: 'https://github.com/Fudan-SDS-DB/docs',
     transformItems(items) {
       return items.filter((item) => !item.url.includes('migration'))
     }
@@ -87,17 +87,17 @@ export const shared = defineConfig({
         rel: 'icon',
         type: 'image/png',
         sizes: '32x32',
-        href: '/assets/newlogo.png'
+        href: '/static/img/sds.png'
       }
     ],
-    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/assets/fducslg.png' }],
-    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/assets/fducslg.png' }],
-    ['link', { rel: 'mask-icon', href: '/assets/fducslg.png', color: '#5bbad5' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/static/img/sds.png' }],
+    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/static/img/sds.png' }],
+    ['link', { rel: 'mask-icon', href: '/static/img/sds.png', color: '#5bbad5' }],
     ['meta', { name: 'theme-color', content: '#5f67ee' }],
   ],
 
   themeConfig: {
-    logo: { src: '/assets/fducslg.png', width: 24, height: 24 },
+    logo: { src: '/static/img/sds.png', width: 24, height: 24 },
     //开启本地搜索
     search: {
       provider: 'local'
