@@ -15,6 +15,7 @@ import { transformerTwoslash } from '@shikijs/vitepress-twoslash';
 
 export const shared = defineConfig({
   title: '数据库及实现',
+  base: '/Final-Project-Guide/',
   lastUpdated: true,
   cleanUrls: true,
   metaChunk: true,
