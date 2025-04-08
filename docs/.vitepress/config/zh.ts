@@ -72,6 +72,5 @@ function sidebarGuide(): DefaultTheme.Sidebar {
       ]
     },
     { text: "注意事项", link: "/caution" },
-    { text: "往年优秀作品", link: "/templates" },
   ]
 }
