@@ -38,7 +38,7 @@
 ### 实验环境
 - Windows 11
 - Ver 8.0.41 for Win64 on x86_64 (MySQL Community Server - GPL)
-- Server 安装了路径 `C:\Program Files\MySQL\MySQL Server 8.0`
+- Server 安装路径 `C:\Program Files\MySQL\MySQL Server 8.0`
 - Data 默认地址 `C:\ProgramData\MySQL`
 
 ### 寻找配置文件
@@ -86,7 +86,7 @@
 - 复制完成后再次尝试启动服务，应该就可以看到如下提示了 ![](../public/assets/mysql/success.png)
 
 ### 验证配置是否生效
-- 登录 MySQL 后，执行以下 SQL 语句（记得加分号），检查 datadir 是否已更新为新路径
+- 登录 MySQL 后，执行以下 SQL 语句（记得加分号），检查 `datadir` 是否已更新为新路径
   ```sql
   SHOW VARIABLES LIKE 'datadir';
   ```
