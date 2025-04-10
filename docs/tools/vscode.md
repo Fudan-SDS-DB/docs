@@ -16,11 +16,10 @@
 #### Markdown 支持
   - Markdown All in One  
   - Markdown Preview Enhanced  
-  :::tip
+  :::tip 小贴士
   在标准项目中，我们通常会提供一个 `README.md` 文件（相信大家在 GitHub 上的项目仓库中也见过）。这个文件是你向他人介绍项目内容的重要窗口，它应当包括项目结构、依赖环境、运行方法等关键信息
   :::
-  :::details
-  建议同学们学习 Markdown 的基本语法（如标题、加粗、列表、代码块等）
+  :::details 建议同学们学习 Markdown 的基本语法（如标题、加粗、列表、代码块等）
   - [Markdown 入门](https://comp101.fducslg.com/tools/markdown1)
   - [Markdown 进阶](https://comp101.fducslg.com/tools/markdown2)
   :::
@@ -72,6 +71,14 @@
 
 
 ## 快捷键
-- 参考 [官方文档](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
-> ✅ 建议优先掌握：注释、查找、格式化、打开终端、移动/复制/删除行、插入空行、文件快速跳转  
-> 💡 鼠标 + 快捷键组合可以大大提升多光标编辑效率
+> 参考 [官方文档](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
+
+这里推荐一些常用且高效的快捷键，能显著提升编辑效率（注意：这些是 VSCode 的默认按键映射，在 PyCharm 等其他 IDE 中可能会有所不同）
+
+- `Ctrl + L`：选中当前行  
+- `Alt + ↑` / `Alt + ↓`：将当前行上移或下移  
+- `Alt + Shift + ↑` / `Alt + Shift + ↓`：复制当前行到上一行或下一行  
+- `Home (Fn + ←)` / `End (Fn + →)`：将光标移至行首或行尾  
+- `Ctrl + D`：选中光标所在的词，重复使用可继续选中下一个相同的词  
+- `Ctrl + Alt + ↑` / `Ctrl + Alt + ↓`：向上或向下添加一个光标，实现多光标编辑  
+- ……
