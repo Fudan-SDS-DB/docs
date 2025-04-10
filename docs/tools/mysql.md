@@ -24,7 +24,7 @@
   ```
   > 该报错的原因是 PowerShell 在执行命令时，会从系统的默认路径以及已配置的环境变量 `PATH` 中查找 `mysql`。如果未找到相应路径，则会出现此错误
 
-  :::tip
+  :::tip 思考
   使用 Mac 的同学可以思考一下，为什么你们通常不会遇到这个问题呢？
 
   系统默认的 `PATH` 都包含哪些路径？不妨试着 Google 一下，或者问问某个很会聊天的大模型 😏
@@ -33,7 +33,7 @@
 
 
 ## 修改数据库配置
-> 在今天早上的上机实验中，不少同学在修改数据库配置时遇到了一些问题。我们在 Windows 11 环境下复现了相关情况，并整理出以下参考，供大家查阅。感兴趣的同学可以跟着操作，也欢迎进一步探索。
+> 在第一次上机实验中，不少同学在修改数据库配置时遇到了一些问题。我们在 Windows 11 环境下复现了相关情况，并整理出以下参考，供大家查阅。感兴趣的同学可以跟着操作，也欢迎进一步探索。
 
 ### 实验环境
 - Windows 11
@@ -50,13 +50,13 @@
   --defaults-file="C:\ProgramData\MySQL\MySQL Server 8.0\my.ini" MySQL80
   ```
   - 其中 `--defaults-file` 指定的路径就是当前使用的配置文件
-  - 哦！原来我们的配置文件现在被放在 `ProgramData` 目录下了，那么按照以前教程写的地址就是不对的！！！
-:::tip
-遇到找不到配置文件的情况时，可以思考：我们是不是该换个角度提问，比如问“如何定位 MySQL 当前使用的配置文件”，而不是死磕在如何创建配置文件上？
+  - **哦！原来我们的配置文件现在被放在 `ProgramData` 目录下了，那么按照以前教程写的地址就是不对的！！！**
+:::tip 思考
+当我们找不到配置文件时，不妨换个角度思考：与其执着于教程中指定的路径是否存在配置文件，不如尝试提问“如何定位 MySQL 当前实际使用的配置文件”。**或许找到它，比手动创建一个配置文件更符合当前的需求和环境**
 :::
 
 ### 修改配置文件
-- Windows 自带的记事本对 `.ini` 文件支持较差，建议使用 VSCode 打开 `C:\ProgramData\MySQL\MySQL Server 8.0` 文件夹
+- Windows 自带的记事本 (NotePad++) 对 `.ini` 文件支持较差，建议使用 VSCode 打开 `C:\ProgramData\MySQL\MySQL Server 8.0` 文件夹
 :::warning 权限提醒
 该路径位于 `C:\ProgramData` 下，修改文件需要管理员权限。请以管理员身份启动 VSCode，然后再打开对应文件夹。
 :::
@@ -65,13 +65,13 @@
 - 手动在 D 盘下新建 `D:\MySQL\Data` 文件夹
 
 ### 重启 MySQL 服务
-配置修改后，必须重启 MySQL 服务，新的配置才能生效。你可以选择以下任意一种方式：
-- 方式一：服务界面中点击“重新启动”
-- 方式二：使用终端命令（需要管理员权限）
-  ```bash
-  net stop MySQL80
-  net start MySQL80
-  ```
+- 配置修改后，必须重启 MySQL 服务，新的配置才能生效。你可以选择以下任意一种方式：
+  - **方式一**：在服务界面中点击“重新启动” ![](../public/assets/mysql/service.png)
+  - **方式二**：使用终端命令（需要管理员权限）
+    ```bash
+    net stop MySQL80  // 停止 MySQL80 服务
+    net start MySQL80 // 启动 MySQL80 服务
+    ```
 - OOPS！好像启动不了了，这是什么情况？？？![](../public/assets/mysql/start.png)
 - 对了，我们是不是应该把 `C:\ProgramData\MySQL\MySQL Server 8.0\Data` 下的所有文件复制到 `D:\MySQL\Data` 文件夹下呢
 :::details 为什么需要复制 `Data` 文件夹呢
@@ -92,14 +92,13 @@
   ```
 - 得到以下输出，成功！![](../public/assets/mysql/change.png)
 
-### 一些参考资料
-- [MySQL 8.0.26 doesn't start after saving my.ini](https://serverfault.com/questions/1073117/mysql-8-0-26-doesnt-start-after-saving-my-ini)
+### 参考资料
 - [Not able to find the my.ini file](https://www.reddit.com/r/mysql/comments/1fl657q/not_able_to_find_the_myini_file/)
-- [MySql 8.0 starts and stops after my.ini saved or edited in Windows 10](https://superuser.com/questions/1421016/mysql-8-0-starts-and-stops-after-my-ini-saved-or-edited-in-windows-10)
 - [How to change MySQL data directory?](https://stackoverflow.com/questions/1795176/how-to-change-mysql-data-directory#:~:text=In%20case%20you%27re%20a%20Windows%20user%20and%20landed%20here%20to%20find%20out%20that%20all%20answers%20are%20for%20Linux%20Users%2C%20don%27t%20get%20disappointed!%20I%20won%27t%20let%20you%20waste%20time%20the%20way%20I%20did.)
+- [MySQL 8.0.26 doesn't start after saving my.ini](https://serverfault.com/questions/1073117/mysql-8-0-26-doesnt-start-after-saving-my-ini)
+- [MySql 8.0 starts and stops after my.ini saved or edited in Windows 10](https://superuser.com/questions/1421016/mysql-8-0-starts-and-stops-after-my-ini-saved-or-edited-in-windows-10)
 
-### 一些建议
-- 助教注意到不少同学通过百度、CSDN 等方式查找 MySQL 配置方法。但这类平台内容质量参差不齐，且优质内容往往需要付费，影响了大家的学习体验。
-- 建议大家多尝试使用 Google、StackOverflow 等平台查找技术问题，这些平台对编程类内容的支持更专业。
+### 建议
+- 助教注意到不少同学通过百度、CSDN 等方式查找 MySQL 配置方法。但这类平台内容质量参差不齐，且优质内容往往需要付费，影响了大家的学习体验。这里建议大家多尝试使用 Google、StackOverflow 等平台查找技术问题，这些平台对编程类内容的支持更专业。
 - 使用大模型时，建议提供更完整的问题描述，适当调整提问方式（prompt），不同的表述方式会带来截然不同的回答。
 - 编程类课程中，遇到 bug 和报错是再正常不过的事情，希望同学们具备直面错误的勇气，并努力提升排查问题、搜索资料、独立解决的能力。你遇到的问题，大概率网上已经有人遇到过 —— 多动动手，STFW!
