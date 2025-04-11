@@ -20,20 +20,19 @@ GitHub 则是一个基于 Git 的在线代码托管平台，提供远程仓库�
 
 ## 一些补充
 
-- **Git 命令很多，一开始可能有点懵**。别担心，其实掌握几个常用操作就够用了，比如添加文件、提交修改（commit）、拉取/推送（pull/push）、切换分支。其他操作等用到的时候再去查就行～  
-  > 友情提示：STFW（Search The Fuxxing Web）+ 善用大模型，事半功倍！
+- **Git 命令很多，一开始可能有点懵**。别担心，其实掌握几个常用操作就够用了，比如添加文件（add）、提交修改（commit）、拉取/推送（pull/push）、切换分支（checkout）。其他操作等用到的时候再去查就行～  
 - **不推荐使用学邮注册 GitHub 账号**，`@m.fudan.edu.cn` 的邮箱在毕业后会被回收，可能影响账户安全。
-- **推荐使用 `.gitignore` 文件来避免提交不必要的文件**。  
-  安装 [gitignore 插件](https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore) 后，在 VSCode 中使用快捷键 `Ctrl + Shift + P`，输入 "Add gitignore"，选择项目语言（如 Python）即可快速生成模板。
+- **推荐使用 `.gitignore` 文件来避免提交不必要的文件**  
+  安装 [gitignore 插件](https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore) 后，在 VSCode 中使用快捷键 `Ctrl + Shift + P`，输入 "Add gitignore"，选择项目语言（如 Python）即可从远程拉取 `.gitignore` 模板。
 - **如果你对命令行不熟悉，推荐使用 [GitHub Desktop](https://desktop.github.com/download/)**  
-这是 GitHub 官方提供的可视化工具，支持拖动文件、点击按钮完成提交、合并等操作。  
-  > （悄悄说一句：助教大二做数据库项目的时候也是靠这个活下来的🤣）
+这是 GitHub 官方提供的可视化工具，支持拖动文件、点击按钮完成提交、合并等操作。~~（悄悄说一句：助教大二做数据库项目的时候也是靠这个活下来的🤣）~~
 - **当你合并分支时，可能会遇到冲突**。VSCode 会显示类似以下格式：![](../public/assets/git-and-github/conflict.png)
   - 请根据实际需要，选择其中一种处理方式：
     - Accept Current（保留当前分支内容）
     - Accept Incoming（保留另一个分支内容）
     - Accept Both（保留两边内容，手动整理）
-- 在 VSCode 中，安装 GitLens 插件可以大大增强 Git 可视化体验：
+  - 或者点击 "Resolve in Editor"，通过左右分支的对比界面，手动选择并编辑最终保留的代码。
+- 在 VSCode 中，安装 GitLens 插件可以大大**增强 Git 可视化体验**：
   - 将鼠标悬停在某一行代码上，即可显示最后修改该行的作者和 commit 信息；
   - 右键点击可查看该文件或某一行的历史版本；
   - 支持 Git Blame 可视化，方便了解每一行代码的责任人；

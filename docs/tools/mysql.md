@@ -10,7 +10,7 @@
 - macOS 用户推荐参考：[Mac 下 MySQL 的安装步骤](https://zhuanlan.zhihu.com/p/37942063)
 
 
-## 注意事项
+## 安装注意事项
 
 - 推荐使用 [MySQL Installer](https://dev.mysql.com/downloads/installer/) 进行安装。
 - 安装 `.msi` 文件时，如果点击没反应，请右键选择“以管理员身份运行”。
@@ -37,9 +37,9 @@
 
 ### 实验环境
 - Windows 11
-- Ver 8.0.41 for Win64 on x86_64 (MySQL Community Server - GPL)
-- Server 安装路径 `C:\Program Files\MySQL\MySQL Server 8.0`
-- Data 默认地址 `C:\ProgramData\MySQL`
+- MySQL Ver 8.0.41 for Win64 on x86_64 (MySQL Community Server - GPL)
+- Server 安装路径： `C:\Program Files\MySQL\MySQL Server 8.0`
+- Data 默认存储地址： `C:\ProgramData\MySQL`
 
 ### 寻找配置文件
 - 打开服务管理器：按住 `Win + R`，输入 `services.msc` 回车
@@ -53,7 +53,7 @@
   - 其中 `--defaults-file` 指定的路径就是当前使用的配置文件
   - **哦！原来我们的配置文件现在被放在 `ProgramData` 目录下了，那么按照以前教程写的地址就是不对的！！！**
 :::tip 提示
-当我们找不到配置文件时，不妨换个角度思考：与其一味纠结于教程中提到的路径是否存在配置文件，不如直接问自己——“我该如何定位 MySQL 当前实际使用的配置文件？”
+当我们找不到配置文件时，不妨换个角度思考：与其一味纠结于教程中提到的路径是否存在配置文件，不如直接问自己——**“我该如何定位 MySQL 当前实际使用的配置文件？”**
 
 随着 MySQL 的不断更新，其默认配置路径也可能发生变化。在这种情况下，与其贸然手动新建一个配置文件，不如优先查找系统当前实际加载的那一份配置文件。这样做不仅更稳妥、更实用，也更符合当前环境的真实需求。
 
@@ -78,7 +78,7 @@
     net start MySQL80 // 启动 MySQL80 服务
     ```
 - OOPS！好像启动不了了，这是什么情况？？？![](../public/assets/mysql/start.png)
-- 对了，我们是不是应该把 `C:\ProgramData\MySQL\MySQL Server 8.0\Data` 下的所有文件复制到 `D:\MySQL\Data` 文件夹下呢
+- 对了，我们是不是应该把 `C:\ProgramData\MySQL\MySQL Server 8.0\Data` 下的所有文件复制到 `D:\MySQL\Data` 文件夹下呢？
 :::details 为什么需要复制 `Data` 文件夹呢
 原始 Data 文件夹中包含了 MySQL 正常启动所必需的内容，包括：
 
@@ -96,7 +96,8 @@
   ```sql
   SHOW VARIABLES LIKE 'datadir';
   ```
-- 得到以下输出，成功！![](../public/assets/mysql/change.png)
+- 得到以下输出，成功！<div align="center"><img src="../public/assets/mysql/change.png" width="70%" /></div>
+- 感兴趣的同学还可以尝试修改 MySQL 的其他参数，比如字符集、缓存池大小等等。不过需要注意的是，**在实际开发环境中，我们建议尽量保持默认配置**，这样更稳定、更安全，也更方便日后的排错和维护
 
 ### 参考资料
 - [Not able to find the my.ini file](https://www.reddit.com/r/mysql/comments/1fl657q/not_able_to_find_the_myini_file/)
@@ -105,6 +106,6 @@
 - [MySql 8.0 starts and stops after my.ini saved or edited in Windows 10](https://superuser.com/questions/1421016/mysql-8-0-starts-and-stops-after-my-ini-saved-or-edited-in-windows-10)
 
 ### 一些建议
-- 助教注意到不少同学通过百度、CSDN 等方式查找 MySQL 配置方法。但这类平台内容质量参差不齐，且优质内容往往需要付费，影响了大家的学习体验。这里建议大家多尝试使用 Google、StackOverflow 等平台查找技术问题，这些平台对编程类内容的支持更专业。
+- 助教注意到不少同学通过百度、CSDN 等方式查找 MySQL 配置方法。**但这类平台内容质量参差不齐，且优质内容往往需要付费，影响了大家的学习体验。** 这里建议大家多尝试使用 Google、StackOverflow 等平台查找技术问题，这些平台对编程类内容的支持更专业。
 - 使用大模型时，建议提供更完整的问题描述，适当调整提问方式（prompt），不同的表述方式会带来截然不同的回答。
 - 编程类课程中，遇到 bug 和报错是再正常不过的事情，希望同学们具备直面错误的勇气，并努力提升排查问题、搜索资料、独立解决的能力。**你遇到的问题，大概率网上已经有人遇到过** —— 多动动手，STFW!
