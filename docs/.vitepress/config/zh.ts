@@ -68,8 +68,8 @@ function sidebarGuide(): DefaultTheme.Sidebar {
       collapsible: true,
       collapsed: false,
       items: [
-        { text: "Django", link: "/example/django"},
-        { text: "项目初始化", link: "/example/initialization"},
+        { text: "框架概览", link: "/example/overview"},
+        { text: "项目起步", link: "/example/initialization"},
       ]
     },
     { text: "注意事项", link: "/caution" },
