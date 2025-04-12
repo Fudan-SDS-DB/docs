@@ -23,7 +23,7 @@ features:
     details: 学习 Git 和 GitHub，掌握版本控制与协作开发技能，提升团队协作效率。
   - icon: 🌐
     title: 项目示例
-    link: /
+    link: /example/overview.md
     details: 通过一个简单示例，展示 Django 的基本用法及其在实际开发中的应用。
   - icon: ❗
     title: 注意事项

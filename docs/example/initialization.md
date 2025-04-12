@@ -194,3 +194,5 @@ git clone https://github.com/Fudan-SDS-DB/FinalProject.git
 ---
 
 项目初始化完成！下一步我们将连接数据库并进行验证。
+
+<Giscus />
