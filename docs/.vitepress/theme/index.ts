@@ -39,11 +39,10 @@ export default {
   extends: DefaultTheme,
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
-      // 'aside-outline-before': () => h(ShareButton),
       'home-hero-before': () => h(Hero),
       'layout-bottom': () => h('div', null, [
-        h(Giscus),  // Add the Giscus comment section
-        h(HomeFooter, { Footer_Data }),  // Keep the HomeFooter
+        h(Giscus),
+        // h(HomeFooter, { Footer_Data }),
       ]),
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu),
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
