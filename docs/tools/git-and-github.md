@@ -38,3 +38,5 @@ GitHub 则是一个基于 Git 的在线代码托管平台，提供远程仓库�
   - 支持 Git Blame 可视化，方便了解每一行代码的责任人；
   - 更多功能欢迎大家自行探索～
   > 顺便推荐一个有趣的 StackOverflow 问答：[What does git blame do?](https://stackoverflow.com/questions/31203001/what-does-git-blame-do) 
+
+<Giscus />

@@ -41,7 +41,10 @@ export default {
     return h(DefaultTheme.Layout, null, {
       // 'aside-outline-before': () => h(ShareButton),
       'home-hero-before': () => h(Hero),
-      'layout-bottom': () => h(HomeFooter, { Footer_Data }),
+      'layout-bottom': () => h('div', null, [
+        h(Giscus),  // Add the Giscus comment section
+        h(HomeFooter, { Footer_Data }),  // Keep the HomeFooter
+      ]),
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu),
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
       'layout-top': () => [h(NolebaseHighlightTargetedHeading)],
