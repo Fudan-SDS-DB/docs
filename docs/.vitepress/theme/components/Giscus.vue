@@ -1,0 +1,20 @@
+<template>
+    <div class="giscus-wrapper">
+        <script 
+            src="https://giscus.app/client.js"
+            data-repo="Fudan-SDS-DB/docs"
+            data-repo-id="R_kgDOOUP-aA"
+            data-category="Q&A"
+            data-category-id="DIC_kwDOOUP-aM4CpB5l"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="preferred_color_scheme"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+        </script>
+    </div>
+</template>

@@ -32,6 +32,7 @@ import Confetti from "./components/Confetti.vue";
 
 import Hero from '../theme/Layout.vue';
 import NCard from './components/NCard.vue';
+import Giscus from './components/Giscus.vue';
 
 import './custom.css';
 export default {
@@ -98,6 +99,7 @@ export default {
         ],
       },
     });
+    app.component('Giscus', Giscus);
   },
   setup() {
     const route = useRoute();
