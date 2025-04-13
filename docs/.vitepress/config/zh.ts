@@ -70,6 +70,7 @@ function sidebarGuide(): DefaultTheme.Sidebar {
       items: [
         { text: "框架概览", link: "/example/overview"},
         { text: "项目起步", link: "/example/initialization"},
+        { text: "数据库配置", link: "/example/setting"},
       ]
     },
     { text: "注意事项", link: "/caution" },

@@ -13,19 +13,19 @@
 1. 在桌面路径（如 `C:\Users\<你的用户名>\Desktop`）下打开 VSCode。
 2. 打开终端（快捷键 Ctrl + `）。
 3. 安装 Django：
-   ```powershell
+   ```bash
    pip install django
    ```
-   ```powershell
+   ```bash
    # 如果访问 PyPI 较慢，可以使用清华镜像源
    pip install django -i https://pypi.tuna.tsinghua.edu.cn/simple
    ```
 4. 安装完成后，使用以下命令初始化一个 Django 项目，其中 `FinalProject` 可替换为你的项目名：
-   ```powershell
+   ```bash
    django-admin startproject FinalProject
    ```
 5. 进入项目文件夹并用 VSCode 打开：
-   ```powershell
+   ```bash
    cd FinalProject
    code .  # 当前目录下打开 VSCode
    ```
@@ -121,13 +121,13 @@ db.sqlite3-journal
 
 在项目根目录下运行：
 
-```powershell
+```bash
 git init
 ```
 
 ### 本地提交
 
-```powershell
+```bash
 # 添加当前目录下的所有文件到 Git 的暂存区
 git add .
 
@@ -163,7 +163,7 @@ create mode 100644 manage.py
    - 左上角的 **Codespaces** 可忽略。  
    - 右上角的 **Manage access** 可用于邀请其他组员协作开发。  
    - 页面中部提供了将本地仓库关联到 GitHub 仓库的命令。由于我们已经在本地初始化过 Git 仓库，因此请复制 **“push an existing repository from the command line”** 部分的命令到 VSCode 终端中执行（❗请记得将链接替换为你自己的远程仓库地址）：
-   ```powershell
+   ```bash
    # 设置本地仓库的远程地址 origin
    git remote add origin https://github.com/Fudan-SDS-DB/FinalProject.git
 
@@ -186,7 +186,7 @@ create mode 100644 manage.py
 
 当仓库创建完成并添加协作者后，小组其他成员可以使用如下命令将远程仓库克隆到本地（❗请替换为小组项目的仓库链接）：
 
-```powershell
+```bash
 git clone https://github.com/Fudan-SDS-DB/FinalProject.git
 ```
 
