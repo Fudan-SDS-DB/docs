@@ -174,12 +174,16 @@ create mode 100644 manage.py
    git push -u origin main
    ```
    :::warning 提示  
-   如果遇到如下报错，说明 GitHub 的 DNS 在部分地区可能受到干扰，无法连接服务器。建议稍后重试，或使用 GitHub Desktop 推送代码。
+   如果遇到如下报错，说明 GitHub 的 DNS 在部分地区可能受到干扰，导致无法连接服务器。建议稍后重试，或改用 [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) 配置，或通过 GitHub Desktop 推送代码。
 
    ```txt
    fatal: unable to access 'https://github.com/Fudan-SDS-DB/FinalProject.git/': 
    Failed to connect to github.com port 443 after 21047 ms: Could not connect to server
    ```
+
+   使用 SSH 连接 GitHub 是一种更稳定、安全的方式，支持基于密钥的身份认证，省去了每次输入用户名和密码的步骤。特别适合频繁使用 Git 操作（如 clone、pull、push）时使用。
+
+   **此外，SSH 也广泛应用于远程服务器登录与管理。借助 VSCode 的 Remote SSH 插件，可以无缝连接服务器，进行代码编辑、部署和调试，大大提升远程开发效率。**
    :::
 
 ### 拉取远程仓库  
