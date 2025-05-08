@@ -6,7 +6,7 @@
 - 后台管理员管理宠物信息并审核领养请求。
 
 下图展示了本系统的数据库表结构：
-![](../public/assets/django/table.svg)
+![数据库表结构](../public/assets/django/table.svg)
 
 ### `users` 表（用户信息）
 
@@ -74,19 +74,82 @@ Django 默认的用户模型 `User` 基于 `AbstractUser` 类进行扩展，提�
 
 > **宠物图片表**用于存储与每只宠物相关的多张图片。每张图片的 URL 地址存储在 `image_url` 字段中，`pet_id` 作为外键，指向 `pets` 表中的对应记录，确保图片与宠物之间的关联性。字段 `created_at` 记录了图片上传的时间，确保图片数据的有效性和时效性。
 
+---
 
-## 在 Django 中创建数据表
+## 在项目中创建 APP
 
-在 Django 中，数据表的创建通常是通过模型类（Model）来完成的。以下是根据上述设计的 Django 模型实现：
+创建 Django app 是 Django 项目架构的核心设计理念之一，目的是：
+
+- **职责分离，便于管理**  
+  每个 app 是项目中的一个独立模块，可以专注完成一类功能，比如：
+  - 用户管理（users）
+  - 宠物管理（pets）
+  - 领养流程（adoption）
+
+- **可复用性强**  
+  Django 的 app 就像插件一样，具有高度的独立性和可移植性，能够在多个项目间复用。
+
+- **配合 Django 自动机制（模型迁移、后台管理等）**  
+  Django 的命令行工具（如 `makemigrations`）是基于 app 的结构来自动识别模型、生成数据库迁移文件的。
+
+- **遵循 Django 官方推荐结构**  
+  标准 Django 项目由多个 app 组成，每个 app 负责一块业务逻辑，使得项目结构清晰、易于扩展。
+
+在我们的示例系统中，创建一个 app 即可满足业务需求。我们将其命名为 `adoption`。
+
+在项目根目录下执行以下命令：
+
+```bash
+python manage.py startapp adoption
+```
+
+该命令将在项目中创建一个名为 `adoption/` 的目录，结构如下：
+
+```txt
+adoption/
+├── __init__.py
+├── admin.py
+├── apps.py
+├── migrations/
+├── models.py
+├── tests.py
+└── views.py
+```
+
+各文件说明如下：
+- `__init__.py`：空文件，标识该目录是一个 Python 包；
+- `admin.py`：用于注册模型到 Django 管理后台；
+- `apps.py`：定义当前 app 的配置，Django 项目启动时会自动读取；
+- `migrations/`：用于存放数据库迁移文件（由 makemigrations 命令自动生成）；
+- `models.py`：用于定义数据库表模型，是构建应用数据结构的核心；
+- `tests.py`：用于编写自动化测试代码；
+- `views.py`：用于定义视图函数，处理前端请求并返回页面或数据。
+
+最后，我们需要在 `FinalProject/settings.py` 中注册该 app：
+```python
+INSTALLED_APPS = [
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "adoption",     # 宠物领养 app
+]
+```
+
+## 在 Django 中创建表结构
+
+在 `adoption/models.py` 中定义模型类，即可声明数据库的表结构：
 
 ```python
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
 
 # 用户信息表模型
-class User(AbstractUser):
-    phone_number = models.CharField(max_length=15, blank=True, null=True)
-    address = models.CharField(max_length=255, blank=True, null=True)
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    phone_number = models.CharField(max_length=20)
     
 # 宠物信息表模型
 class Pet(models.Model):
@@ -127,11 +190,11 @@ class PetImage(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 ```
 
-上述模型类在 Django 中的数据库迁移操作将自动创建相应的数据表。在命令行中执行以下命令来生成并应用迁移：
+完成模型定义后，运行以下命令即可将表结构迁移到数据库：
 
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-这段代码将自动在数据库中创建相应的数据表，并应用所有设计好的约束和关系。
+Django 会自动根据模型生成 SQL 语句，在数据库中建立对应表结构、外键关系和约束。

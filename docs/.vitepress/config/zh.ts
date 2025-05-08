@@ -72,7 +72,7 @@ function sidebarGuide(): DefaultTheme.Sidebar {
         { text: "项目起步", link: "/example/initialization"},
         { text: "数据库配置", link: "/example/setting"},
         { text: "数据表创建", link: "/example/table"},
-        { text: "创建用户", link: "/example/user"},
+        { text: "用户及后台管理", link: "/example/admin"},
       ]
     },
     { text: "注意事项", link: "/caution" },
