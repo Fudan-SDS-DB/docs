@@ -38,3 +38,50 @@ GitHub 则是一个基于 Git 的在线代码托管平台，提供远程仓库�
   - 支持 Git Blame 可视化，方便了解每一行代码的责任人；
   - 更多功能欢迎大家自行探索～
   > 顺便推荐一个有趣的 StackOverflow 问答：[What does git blame do?](https://stackoverflow.com/questions/31203001/what-does-git-blame-do) 
+
+<span style="opacity: 0.5;">
+
+## Git 代理配置
+
+在某些网络环境下，例如访问 GitHub 受限时，我们可以通过配置 Git 使用代理来确保正常访问远程仓库。
+
+### 查找代理服务器地址
+
+首先，确认你的代理服务器的地址和端口（如使用 Clash 或其他代理工具）。一般情况下，Clash 运行在 `127.0.0.1:7890`，但也可能根据配置有所不同。
+
+### 配置 Git 使用代理
+
+使用以下命令来配置 Git 全局代理：
+
+
+```bash
+git config --global http.proxy http://127.0.0.1:7890
+git config --global https.proxy http://127.0.0.1:7890
+```
+
+请注意，这里 `127.0.0.1` 和 `7890` 是你代理服务器的 IP 地址和端口。如果你的代理服务器使用的是不同的地址或端口，请替换为相应的值。
+
+### 设置代理认证（如果需要）
+如果你的代理服务器需要认证（例如用户名和密码），可以使用以下命令：
+
+```bash
+git config --global http.proxy http://username:password@127.0.0.1:7890
+git config --global https.proxy http://username:password@127.0.0.1:7890
+```
+
+将 `username` 和 `password` 替换为你的代理认证信息。
+
+### 配置特定仓库的代理
+如果只需要为某个特定仓库配置代理，而不是全局配置，可以在该仓库目录下运行以下命令：
+```bash
+git config http.proxy http://127.0.0.1:7890
+git config https.proxy http://127.0.0.1:7890
+```
+
+### 取消代理设置
+如果你不再需要代理，可以通过以下命令取消 Git 的代理设置：
+```bash
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+</span>
